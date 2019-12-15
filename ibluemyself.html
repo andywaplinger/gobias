@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="ibluemyself.js"></script>
+
+    <script>
+      function createParagraph(num) {
+        var paragraph = "";
+        h = num;
+        i = num*5;
+        while (i > 0) {
+          var quote = quotes[Math.floor(Math.random()*quotes.length)];
+          console.log(quote);
+          paragraph += quote + " ";
+          i--;
+          if (i%5 == 0) {
+            paragraph += "\n\n";
+          };
+        };
+        $("#lorem").text(paragraph);
+      };
+    </script>
+
+    <link rel="stylesheet" href="ibluemyself.css"> 
+
+  </head>
+  <body>
+    <div class="text-center mb-4">
+      <h1>I Blue Myself</h1>
+      <h5>An <i>Arrested Development</i> Lorem Ipsum Generator</h5>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div>
+            <div class="pb-2">Choose the number of paragraphs you want (1-5):</div>
+            <input type="number" id="quantity" name="quantity" class="mb-4" value="1" min="1" max="5">
+          </div>
+          <div>
+            <button id="generate" onclick="createParagraph($('#quantity').val());" class="btn btn-outline-primary">
+            Generate Lorem Ipsum
+            </button>
+          </div>
+        </div>
+        <div id="lorem" class="col">
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+      crossorigin="anonymous">
+    </script>
+
+  </body>
+</html>

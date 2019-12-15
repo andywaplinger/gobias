@@ -1,2 +1,2 @@
-# ibluemyself
-Arrested Development lorem ipsum generator
+# I Blue Myself
+An _Arrested Development_ lorem ipsum generator.

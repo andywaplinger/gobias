@@ -1,3 +1,33 @@
+body {
+  background: linear-gradient(90deg, #e26d20 50%, white 50%);
+  color: white;
+}
+
+@font-face {
+  font-family: Blur;
+  src: url('assets/Blur_Medium.ttf');
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: Blur;
+  text-transform: uppercase;
+}
+
 #lorem {
   white-space: pre-wrap;
 }
+
+.btn-primary {
+  background-color: #034da0;
+  border-color: #034da0;
+}
+
+.btn-outline-light:hover {
+  background-color: #034da0;
+  border-color: #034da0;
+  color: white;
+} 

@@ -50,9 +50,12 @@
       </div>
       <div class="row">
         <div class="col text-light">
-          <div>
-            <div class="pb-2">Choose the number of paragraphs you want (1-5):</div>
-            <input type="number" id="quantity" name="quantity" class="mb-4" value="1" min="1" max="5">
+          <div class="">
+            <div class="mb-4 float-left">Choose the number of paragraphs you want:
+              <span class="quantity pl-2 float-right">
+                <input type="number" id="quantity" name="quantity" class="" value="1" min="1" max="5">
+              </span>
+            </div>
           </div>
           <div class="mb-3">
             <button id="generate" onclick="createParagraph($('#quantity').val()); $('#clipboard').removeClass('d-none');" class="btn btn-outline-light mr-2 mb-3">
@@ -115,6 +118,45 @@
         console.log(e);
         setTooltip(e.trigger, 'Failed!');
         hideTooltip(e.trigger);
+      });
+    </script>
+
+    <!-- Number Input -->
+    <script>
+      jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');
+
+      jQuery('.quantity').each(function() {
+        var spinner = jQuery(this),
+        input = spinner.find('input[type="number"]'),
+        btnUp = spinner.find('.quantity-up'),
+        btnDown = spinner.find('.quantity-down'),
+        min = input.attr('min'),
+        max = input.attr('max');
+        btnUp.click(function() {
+          var oldValue = parseFloat(input.val());
+          if (oldValue >= max) {
+          var newVal = oldValue;
+
+          } else {
+          var newVal = oldValue + 1;
+          }
+
+          spinner.find("input").val(newVal);
+          spinner.find("input").trigger("change");
+        });
+
+        btnDown.click(function() {
+        var oldValue = parseFloat(input.val());
+
+        if (oldValue <= min) {
+        var newVal = oldValue;
+
+        } else {
+        var newVal = oldValue - 1;
+        }
+          spinner.find("input").val(newVal);
+          spinner.find("input").trigger("change");
+        });
       });
     </script>
 

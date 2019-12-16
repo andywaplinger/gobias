@@ -1,6 +1,13 @@
-body {
-  background: linear-gradient(90deg, #e26d20 50%, white 50%);
-  color: white;
+@media (min-width: 576px) {
+  body {
+    background: linear-gradient(90deg, #e26d20 50%, white 50%);
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    background: #e26d20;
+  }
 }
 
 @font-face {
@@ -14,11 +21,22 @@ a:hover {
 
 h1 {
   font-family: Blur;
-  text-transform: uppercase;
 }
 
 #lorem {
   white-space: pre-wrap;
+}
+
+@media (min-width: 576px) {
+  .lorem {
+    color: #343a40;
+  }
+}
+
+@media (max-width: 576px) {
+  .lorem {
+    color: #f8f9fa;
+  }
 }
 
 .btn-primary {

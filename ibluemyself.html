@@ -45,17 +45,17 @@
   <body class="d-flex flex-column h-100">
     <main role="main" class="col-md-10 mx-auto">
       <div class="row d-flex flex-column mb-4 mt-4 text-light">
-        <h1 class="col-12 col-sm-8 text-uppercase">I Blue Myself</h1>
+        <h2 class="col-12 col-sm-8 text-uppercase">Gobias Some Coffee</h2>
         <h5 class="col-12 col-sm-6">An <i>Arrested Development</i> Lorem Ipsum Generator</h5>
       </div>
       <div class="row">
-        <div class="col text-light">
-          <div class="row pl-3">
-            <div class="mb-4 float-left">Choose the number of paragraphs you want:
-              <span class="quantity pl-2 float-right">
-                <input type="number" id="quantity" name="quantity" class="" value="1" min="1" max="5">
-              </span>
+        <div class="col-sm text-light">
+          <div class="row mb-3 pl-3">
+            <div class="mb-2 float-left">Choose the number of paragraphs you want:
             </div>
+            <span class="quantity mb-2 pl-2 float-right">
+              <input type="number" id="quantity" name="quantity" class="" value="1" min="1" max="5">
+            </span>
           </div>
           <div class="row pl-3 mb-3">
             <button id="generate" onclick="createParagraph($('#quantity').val()); $('#clipboard').removeClass('d-none');" class="btn btn-outline-light mr-2 mb-3">
@@ -66,7 +66,7 @@
             </button>
           </div>
         </div>
-        <div id="lorem" class="col lorem">
+        <div id="lorem" class="col-sm lorem">
         </div>
       </div>
     </main>
